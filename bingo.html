@@ -131,7 +131,8 @@
        </div>
        <h1 style="color: red;">ĮSIDĖMĖKITE!</h1>
        <h1>Galimi BINGO būdai šį raundą - linijos</h1>
-       <button style="width: 200px; height: 50px; background-color: black; color: white; border-radius: 15px; margin: 20px auto; border: none; text-align: center; font-family: 'Poppins', sans-serif; font-size: 25px; cursor: pointer; display: block;" id="complete" onclick="myFunction()">Rodyti</button>
+       <button style="width: 200px; height: 50px; background-color: black; color: white; border-radius: 15px; margin: 20px auto; border: none; text-align: center; font-family: 'Poppins', sans-serif; font-size: 25px; cursor: pointer; display: block;" id="rodyti" onclick="myFunction()">Rodyti</button>
+       <h1 id="rodymas" style="display: none;">Linijų tipai rodomi aukščiau</h1>
    </div>
    <div style="width: 100%; height: 0; position: fixed; top: 0; background-color: deepskyblue; display: flex; justify-content: space-around; align-items: center; flex-direction: column; padding: 0; transition: 0.3s; overflow: hidden;" id="type2">
       <div style="display: flex; justify-content: space-around; align-items: center; width: 400px; height: 50px;">
@@ -304,9 +305,9 @@
         <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="seventyFour" onclick="seventyFour()">74</p>
         <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="seventyFive" onclick="seventyFive()">75</p>
     </div>
-    <button style="width: 200px; height: 50px; background-color: black; color: white; border-radius: 15px; margin: 20px auto; border: none; text-align: center; font-family: 'Poppins', sans-serif; font-size: 25px; cursor: pointer; display: block;" id="baig" onclick="win()">Baigta</button>
-    <button style="width: 200px; height: 50px; background-color: black; color: white; border-radius: 15px; margin: 20px auto; border: none; text-align: center; font-family: 'Poppins', sans-serif; font-size: 25px; cursor: pointer; display: none;" id="baig2" onclick="win2()">Baigta</button>
-    <button style="width: 200px; height: 50px; background-color: black; color: white; border-radius: 15px; margin: 20px auto; border: none; text-align: center; font-family: 'Poppins', sans-serif; font-size: 25px; cursor: pointer; display: none;" id="baig3" onclick="win3()">Baigta</button>
+    <button style="width: 200px; height: 50px; background-color: black; color: white; border-radius: 15px; margin: 20px auto; border: none; text-align: center; font-family: 'Poppins', sans-serif; font-size: 25px; cursor: pointer; display: block;" id="baig" onclick="win()">Baigti</button>
+    <button style="width: 200px; height: 50px; background-color: black; color: white; border-radius: 15px; margin: 20px auto; border: none; text-align: center; font-family: 'Poppins', sans-serif; font-size: 25px; cursor: pointer; display: none;" id="baig2" onclick="win2()">Baigti</button>
+    <button style="width: 200px; height: 50px; background-color: black; color: white; border-radius: 15px; margin: 20px auto; border: none; text-align: center; font-family: 'Poppins', sans-serif; font-size: 25px; cursor: pointer; display: none;" id="baig3" onclick="win3()">Baigti</button>
     <div style="display: none; justify-content: center; align-items: center; margin-top: 35px;" id="win">
     <label for="name">Laimėtojas (-a) yra</label>
     <input type="text" style="background-color: white; border: none; border-radius: 10px; width: 60px; font-family: 'Poppins', sans-serif; font-size: 15px; margin-left: 5px;" id="winner" required>
@@ -332,6 +333,8 @@
         document.getElementById("3").style.backgroundColor = "skyblue";
         document.getElementById("4").style.backgroundColor = "skyblue";
         document.getElementById("5").style.backgroundColor = "skyblue";
+        document.getElementById("rodyti").style.display = "none";
+        document.getElementById("rodymas").style.display = "block";
         setTimeout(() => {
             document.getElementById("1").style.backgroundColor = "purple";
             document.getElementById("2").style.backgroundColor = "purple";
