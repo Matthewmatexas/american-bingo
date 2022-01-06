@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>American Bingo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="font-family: 'Poppins', sans-serif; background-color: skyblue; overflow-x: hidden; padding: 0; margin: 0; padding-bottom: 15px;">
+  <style>
+      @keyframes trecias{
+          0%{
+              opacity: 1;
+          }
+          50%{
+              border: 2px solid orange;
+              opacity: 1;
+          }
+          100%{
+              border: 2px solid black;
+              opacity: 0;
+          }
+      }
+      @keyframes antras{
+          0%{
+              opacity: 1;
+          }
+          50%{
+              border: 2px solid orange;
+              opacity: 1;
+          }
+          100%{
+              border: 2px solid black;
+              opacity: 0;
+          }
+      }
+      @keyframes pirmas{
+          0%{
+              opacity: 1;
+          }
+          50%{
+              border: 2px solid orange;
+              opacity: 1;
+          }
+          100%{
+              border: 2px solid black;
+              opacity: 0;
+          }
+      }
+      @keyframes aukstis{
+          0%{
+              height: 100%;
+          }
+          95%{
+              height: 100%;
+          }
+          100%{
+              height: 0;
+          }
+      }
+      .screen{
+          width: 100%; 
+          height: 100%; 
+          position: fixed; 
+          background-color: skyblue; 
+          top: 0; 
+          display: none; 
+          justify-content: center; 
+          align-items: center; 
+          flex-direction: column; 
+          overflow: hidden;
+      }
+      @media only screen and (max-width: 800px) {
+          .screen{
+              display: flex;
+          }
+      }
+    </style>
+   <div style="width: 100%; height: 0; position: fixed; background-color: skyblue; top: 0; display: flex; justify-content: center; align-items: center; flex-direction: column; animation-name: aukstis; animation-duration: 4.1s; animation-timing-function: linear; overflow: hidden;">
+       <h1>American bingo</h1>
+       <h2>Starts in...</h2>
+       <div style="border-radius: 100%; border: 2px solid black; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; opacity: 0; animation-name: trecias; animation-duration: 1s; animation-timing-function: linear;"><h1>3</h1></div>
+       <div style="border-radius: 100%; border: 2px solid black; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; opacity: 0; animation-name: antras; animation-duration: 1s; animation-timing-function: linear; animation-delay: 1s; position: absolute; margin-top: 165px;"><h1>2</h1></div>
+       <div style="border-radius: 100%; border: 2px solid black; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; opacity: 0; animation-name: pirmas; animation-duration: 1s; animation-timing-function: linear; animation-delay: 2s; position: absolute; margin-top: 165px;"><h1>1</h1></div>
+       <div style="border-radius: 15px; border: 2px solid black; width: 100px; height: 50px; display: flex; justify-content: center; align-items: center; opacity: 0; animation-name: pirmas; animation-duration: 1s; animation-timing-function: linear; animation-delay: 3s; position: absolute; margin-top: 165px;"><h1>NOW!</h1></div>
+   </div>
+   <div class="screen">
+       <h1>American bingo</h1>
+       <h2 style="color: red;">Screen size is too small</h2>
+       <h3 style="color: red;">American Bingo is not optimised for this screen size</h3>
+       <h4 style="color: red;">Please open the software on a larger screen</h4>
+   </div>
+    <h1 style="text-align: center;">American Bingo</h1>
+    <div style="width: 100%; height: 100px; background-color: deepskyblue; display: block; margin: 0; display: flex; justify-content: space-around; align-items: center; border-radius: 15px 15px 0 0;">
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; font-weight: 600; color: white; user-select: none;">B</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="one" onclick="one()">1</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="two" onclick="two()">2</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="three" onclick="three()">3</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="four" onclick="four()">4</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="five" onclick="five()">5</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="six" onclick="six()">6</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="seven" onclick="seven()">7</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="eight" onclick="eight()">8</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="nine" onclick="nine()">9</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="ten" onclick="ten()">10</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="eleven" onclick="eleven()">11</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="twelve" onclick="twelve()">12</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="thirteen" onclick="thirteen()">13</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fourteen" onclick="fourteen()">14</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fifteen" onclick="fifteen()">15</p>
+    </div>
+    <div style="width: 100%; height: 100px; background-color: deepskyblue; display: block; margin: 0; display: flex; justify-content: space-around; align-items: center;">
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; font-weight: 600; color: white; user-select: none;">I</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="sixteen" onclick="sixteen()">16</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="seventeen" onclick="seventeen()">17</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="eightteen" onclick="eightteen()">18</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="nineteen" onclick="nineteen()">19</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="twenty" onclick="twenty()">20</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="twentyOne" onclick="twentyOne()">21</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="twentyTwo" onclick="twentyTwo()">22</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="twentyThree" onclick="twentyThree()">23</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="twentyFour" onclick="twentyFour()">24</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="twentyFive" onclick="twentyFive()">25</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="twentySix" onclick="twentySix()">26</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="twentySeven" onclick="twentySeven()">27</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="twentyEight" onclick="twentyEight()">28</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="twentyNine" onclick="twentyNine()">29</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="thirty" onclick="thirty()">30</p>
+    </div>
+    <div style="width: 100%; height: 100px; background-color: deepskyblue; display: block; margin: 0; display: flex; justify-content: space-around; align-items: center;">
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; font-weight: 600; color: white; user-select: none;">N</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="thirtyOne" onclick="thirtyOne()">31</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="thirtyTwo" onclick="thirtyTwo()">32</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="thirtyThree" onclick="thirtyThree()">33</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="thirtyFour" onclick="thirtyFour()">34</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="thirtyFive" onclick="thirtyFive()">35</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="thirtySix" onclick="thirtySix()">36</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="thirtySeven" onclick="thirtySeven()">37</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="thirtyEight" onclick="thirtyEight()">38</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="thirtyNine" onclick="thirtyNine()">39</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fourty" onclick="fourty()">40</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fourtyOne" onclick="fourtyOne()">41</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fourtyTwo" onclick="fourtyTwo()">42</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fourtyThree" onclick="fourtyThree()">43</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fourtyFour" onclick="fourtyFour()">44</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fourtyFive" onclick="fourtyFive()">45</p>
+    </div>
+    <div style="width: 100%; height: 100px; background-color: deepskyblue; display: block; margin: 0; display: flex; justify-content: space-around; align-items: center;">
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; font-weight: 600; color: white; user-select: none;">G</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fourtySix" onclick="fourtySix()">46</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fourtySeven" onclick="fourtySeven()">47</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fourtyEight" onclick="fourtyEight()">48</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fourtyNine" onclick="fourtyNine()">49</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fifty" onclick="fifty()">50</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fiftyOne" onclick="fiftyOne()">51</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fiftyTwo" onclick="fiftyTwo()">52</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fiftyThree" onclick="fiftyThree()">53</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fiftyFour" onclick="fiftyFour()">54</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fiftyFive" onclick="fiftyFive()">55</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fiftySix" onclick="fiftySix()">56</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fiftySeven" onclick="fiftySeven()">57</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fiftyEight" onclick="fiftyEight()">58</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="fiftyNine" onclick="fiftyNine()">59</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="sixty" onclick="sixty()">60</p>
+    </div>
+    <div style="width: 100%; height: 100px; background-color: deepskyblue; display: block; margin: 0; display: flex; justify-content: space-around; align-items: center; border-radius: 0 0 15px 15px;">
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; font-weight: 600; color: white; user-select: none;">O</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="sixtyOne" onclick="sixtyOne()">61</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="sixtyTwo" onclick="sixtyTwo()">62</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="sixtyThree" onclick="sixtyThree()">63</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="sixtyFour" onclick="sixtyFour()">64</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="sixtyFive" onclick="sixtyFive()">65</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="sixtySix" onclick="sixtySix()">66</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="sixtySeven" onclick="sixtySeven()">67</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="sixtyEight" onclick="sixtyEight()">68</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="sixtyNine" onclick="sixtyNine()">69</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="seventy" onclick="seventy()">70</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="seventyOne" onclick="seventyOne()">71</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="seventyTwo" onclick="seventyTwo()">72</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="seventyThree" onclick="seventyThree()">73</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="seventyFour" onclick="seventyFour()">74</p>
+        <p style="width: 50px; height: 50px; background-color: skyblue; border-radius: 15px; display: flex; justify-content: center; align-items: center; font-size: 35px; transition: 0.3s; cursor: pointer; user-select: none;" id="seventyFive" onclick="seventyFive()">75</p>
+    </div>
+    <button style="width: 200px; height: 50px; background-color: black; color: white; border-radius: 15px; margin: 20px auto; border: none; text-align: center; font-family: 'Poppins', sans-serif; font-size: 25px; cursor: pointer; display: block;" id="complete" onclick="win()">Complete</button>
+    <div style="display: none; justify-content: center; align-items: center; margin-top: 35px;" id="win">
+    <label for="name">Winner is</label>
+    <input type="text" style="background-color: white; border: none; border-radius: 10px; width: 60px; font-family: 'Poppins', sans-serif; font-size: 15px; margin-left: 5px;" id="winner" required>
+    <label for="name">!</label>
+    <button style="width: 50px; height: 25px; background-color: black; color: white; border-radius: 15px; border: none; text-align: center; font-family: 'Poppins', sans-serif; font-size: 15px; cursor: pointer; margin-left: 5px;" id="ok" onclick="winner()">OK</button>
+    </div>
+    <script>
+        function one(){
+        document.getElementById("one").style.backgroundColor = "purple";
+            }
+        function two(){
+        document.getElementById("two").style.backgroundColor = "purple";
+            }
+        function three(){
+        document.getElementById("three").style.backgroundColor = "purple";
+            }
+        function four(){
+        document.getElementById("four").style.backgroundColor = "purple";
+            }
+        function five(){
+        document.getElementById("five").style.backgroundColor = "purple";
+            }
+        function six(){
+        document.getElementById("six").style.backgroundColor = "purple";
+            }
+        function seven(){
+        document.getElementById("seven").style.backgroundColor = "purple";
+            }
+        function eight(){
+        document.getElementById("eight").style.backgroundColor = "purple";
+            }
+        function nine(){
+        document.getElementById("nine").style.backgroundColor = "purple";
+            }
+        function ten(){
+        document.getElementById("ten").style.backgroundColor = "purple";
+            }
+        function eleven(){
+        document.getElementById("eleven").style.backgroundColor = "purple";
+            }
+        function twelve(){
+        document.getElementById("twelve").style.backgroundColor = "purple";
+            }
+        function thirteen(){
+        document.getElementById("thirteen").style.backgroundColor = "purple";
+            }
+        function fourteen(){
+        document.getElementById("fourteen").style.backgroundColor = "purple";
+            }
+        function fifteen(){
+        document.getElementById("fifteen").style.backgroundColor = "purple";
+            }
+        function sixteen(){
+        document.getElementById("sixteen").style.backgroundColor = "purple";
+            }
+        function seventeen(){
+        document.getElementById("seventeen").style.backgroundColor = "purple";
+            }
+        function eightteen(){
+        document.getElementById("eightteen").style.backgroundColor = "purple";
+            }
+        function nineteen(){
+        document.getElementById("nineteen").style.backgroundColor = "purple";
+            }
+        function twenty(){
+        document.getElementById("twenty").style.backgroundColor = "purple";
+            }
+        function twentyOne(){
+        document.getElementById("twentyOne").style.backgroundColor = "purple";
+            }
+        function twentyTwo(){
+        document.getElementById("twentyTwo").style.backgroundColor = "purple";
+            }
+        function twentyThree(){
+        document.getElementById("twentyThree").style.backgroundColor = "purple";
+            }
+        function twentyFour(){
+        document.getElementById("twentyFour").style.backgroundColor = "purple";
+            }
+        function twentyFive(){
+        document.getElementById("twentyFive").style.backgroundColor = "purple";
+            }
+        function twentySix(){
+        document.getElementById("twentySix").style.backgroundColor = "purple";
+            }
+        function twentySeven(){
+        document.getElementById("twentySeven").style.backgroundColor = "purple";
+            }
+        function twentyEight(){
+        document.getElementById("twentyEight").style.backgroundColor = "purple";
+            }
+        function twentyNine(){
+        document.getElementById("twentyNine").style.backgroundColor = "purple";
+            }
+        function thirty(){
+        document.getElementById("thirty").style.backgroundColor = "purple";
+            }
+        function thirtyOne(){
+        document.getElementById("thirtyOne").style.backgroundColor = "purple";
+            }
+        function thirtyTwo(){
+        document.getElementById("thirtyTwo").style.backgroundColor = "purple";
+            }
+        function thirtyThree(){
+        document.getElementById("thirtyThree").style.backgroundColor = "purple";
+            }
+        function thirtyFour(){
+        document.getElementById("thirtyFour").style.backgroundColor = "purple";
+            }
+        function thirtyFive(){
+        document.getElementById("thirtyFive").style.backgroundColor = "purple";
+            }
+        function thirtySix(){
+        document.getElementById("thirtySix").style.backgroundColor = "purple";
+            }
+        function thirtySeven(){
+        document.getElementById("thirtySeven").style.backgroundColor = "purple";
+            }
+        function thirtyEight(){
+        document.getElementById("thirtyEight").style.backgroundColor = "purple";
+            }
+        function thirtyNine(){
+        document.getElementById("thirtyNine").style.backgroundColor = "purple";
+            }
+        function fourty(){
+        document.getElementById("fourty").style.backgroundColor = "purple";
+            }
+        function fourtyOne(){
+        document.getElementById("fourtyOne").style.backgroundColor = "purple";
+            }
+        function fourtyTwo(){
+        document.getElementById("fourtyTwo").style.backgroundColor = "purple";
+            }
+        function fourtyThree(){
+        document.getElementById("fourtyThree").style.backgroundColor = "purple";
+            }
+        function fourtyFour(){
+        document.getElementById("fourtyFour").style.backgroundColor = "purple";
+            }
+        function fourtyFive(){
+        document.getElementById("fourtyFive").style.backgroundColor = "purple";
+            }
+        function fourtySix(){
+        document.getElementById("fourtySix").style.backgroundColor = "purple";
+            }
+        function fourtySeven(){
+        document.getElementById("fourtySeven").style.backgroundColor = "purple";
+            }
+        function fourtyEight(){
+        document.getElementById("fourtyEight").style.backgroundColor = "purple";
+            }
+        function fourtyNine(){
+        document.getElementById("fourtyNine").style.backgroundColor = "purple";
+            }
+        function fifty(){
+        document.getElementById("fifty").style.backgroundColor = "purple";
+            }
+        function fiftyOne(){
+        document.getElementById("fiftyOne").style.backgroundColor = "purple";
+            }
+        function fiftyTwo(){
+        document.getElementById("fiftyTwo").style.backgroundColor = "purple";
+            }
+        function fiftyThree(){
+        document.getElementById("fiftyThree").style.backgroundColor = "purple";
+            }
+        function fiftyFour(){
+        document.getElementById("fiftyFour").style.backgroundColor = "purple";
+            }
+        function fiftyFive(){
+        document.getElementById("fiftyFive").style.backgroundColor = "purple";
+            }
+        function fiftySix(){
+        document.getElementById("fiftySix").style.backgroundColor = "purple";
+            }
+        function fiftySeven(){
+        document.getElementById("fiftySeven").style.backgroundColor = "purple";
+            }
+        function fiftyEight(){
+        document.getElementById("fiftyEight").style.backgroundColor = "purple";
+            }
+        function fiftyNine(){
+        document.getElementById("fiftyNine").style.backgroundColor = "purple";
+            }
+        function sixty(){
+        document.getElementById("sixty").style.backgroundColor = "purple";
+            }
+        function sixtyOne(){
+        document.getElementById("sixtyOne").style.backgroundColor = "purple";
+            }
+        function sixtyTwo(){
+        document.getElementById("sixtyTwo").style.backgroundColor = "purple";
+            }
+        function sixtyThree(){
+        document.getElementById("sixtyThree").style.backgroundColor = "purple";
+            }
+        function sixtyFour(){
+        document.getElementById("sixtyFour").style.backgroundColor = "purple";
+            }
+        function sixtyFive(){
+        document.getElementById("sixtyFive").style.backgroundColor = "purple";
+            }
+        function sixtySix(){
+        document.getElementById("sixtySix").style.backgroundColor = "purple";
+            }
+        function sixtySeven(){
+        document.getElementById("sixtySeven").style.backgroundColor = "purple";
+            }
+        function sixtyEight(){
+        document.getElementById("sixtyEight").style.backgroundColor = "purple";
+            }
+        function sixtyNine(){
+        document.getElementById("sixtyNine").style.backgroundColor = "purple";
+            }
+        function seventy(){
+        document.getElementById("seventy").style.backgroundColor = "purple";
+            }
+        function seventyOne(){
+        document.getElementById("seventyOne").style.backgroundColor = "purple";
+            }
+        function seventyTwo(){
+        document.getElementById("seventyTwo").style.backgroundColor = "purple";
+            }
+        function seventyThree(){
+        document.getElementById("seventyThree").style.backgroundColor = "purple";
+            }
+        function seventyFour(){
+        document.getElementById("seventyFour").style.backgroundColor = "purple";
+            }
+        function seventyFive(){
+        document.getElementById("seventyFive").style.backgroundColor = "purple";
+            }
+        function winner(){
+        document.getElementById("winner").style.backgroundColor = "transparent";
+        document.getElementById("ok").style.display = "none";
+        setTimeout(() => {location.replace("index.html");}, 10000);
+            }
+        function win(){
+        document.getElementById("win").style.display = "flex";
+        document.getElementById("complete").style.display = "none";
+            }
+    </script>
+</body>
+</html>
